@@ -21,7 +21,6 @@ class Table extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className='table'>
         <div className="input-wrapper">
@@ -33,14 +32,23 @@ class Table extends React.Component {
         <table className={(this.props.columns > 0 && this.props.rows.length > 0) ? 'visible' : 'hidden'}>
           <thead>
           <tr>
-            <td colSpan={this.props.columns}>
+            <td colSpan={this.props.columns + 1}>
               <CellValueField/>
             </td>
+          </tr>
+          <tr>
+            {this.props.columns > 0 && <td key="empty" />}
+            {this.props.columns > 0 && new Array(this.props.columns).fill(null).map((_, key) => {
+              return (
+                <td key={key}>{String.fromCharCode('A'.charCodeAt(0) + key)}</td>
+              );
+            })}
           </tr>
           </thead>
           <tbody>
           {this.props.rows.map((el, row) => {
             return (<tr key={row}>
+              <td>{row}</td>
               {el.map((item, col) => {
                 return (
                   <Cell
@@ -69,4 +77,3 @@ export default connect((state => {
     selectedCell: state.application.selectedCell,
   };
 }), { updateColumns, updateRows })(Table);
-
