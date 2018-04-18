@@ -7,7 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config webpack.config.js --progress",
     "dev-windows": "set NODE_ENV=development & node webpack-dev-server.js",
-    "prestart" : "npm i",
     "start" : "npm run dev"
   },
   "repository": {
