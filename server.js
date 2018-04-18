@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(publicDir, '/index.html'));
 });
 
+app.get('/build/bundle.js', (req, res) => {
+  res.sendFile(path.join(publicDir, '/js/main.js'));
+});
+
 app.use(express.static(publicDir));
 
 console.log('Listening at' + port);
