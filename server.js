@@ -3,7 +3,7 @@ const express = require('express');
   app = express();
   hostname = '0.0.0.0';
   port = parseInt(process.env.PORT, 10) || 8080;
-  publicDir = __dirname + '/src';
+  publicDir = __dirname + '/build';
   path = require('path');
 
 app.get('/', (req, res) => {
