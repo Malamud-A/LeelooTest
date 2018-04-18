@@ -7,7 +7,13 @@
         <script type="text/javascript" src="/build/bundle.js"></script>
         <script>
             function showInstruction(){
-              alert('Available formulas:\n' +
+              alert(
+                'To init the table enter the dimentions in the fields\n' +
+                '----------------------------------------------------------\n' +
+                'Click on a Cell to select it\n' +
+                'Edit it\'s value in the input in the table head\n' +
+                '--------------------------------------------------\n'+
+                'Available formulas:\n' +
                 ' SUM,\n' +
                 ' AVG (average),\n' +
                 ' CNT(concatenation),\n' +
@@ -15,15 +21,7 @@
                 '------------------------------\n' +
                 'Usage: =SUM(ID1, ID2, ID3)\n' +
                 '---------------------------------\n' +
-                'Numeral indexes are for ROWS\n' +
-                ' and literal indexes are for COLUMNS\n' +
-                '--------------------------------------\n ' +
-                '(i.e. the most top-left cell is A0,\n' +
-                ' the one on the right is B0\n' +
-                ' and the one below is A1)\n' +
-                '----------------------------------\n' +
-                'Click on a Cell to select it\n' +
-                'Edit it\'s value in the input in the table head');
+                'To set currency value add \'$\' at the end');
             }
         </script>
         <input style="
